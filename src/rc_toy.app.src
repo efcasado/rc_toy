@@ -1,0 +1,13 @@
+{application, rc_toy,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  riak_core
+                 ]},
+  {mod, { rc_toy_app, []}},
+  {env, []}
+ ]}.

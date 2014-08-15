@@ -1,0 +1,9 @@
+*.DS_Store
+*~
+deps
+*.beam
+ebin
+.#*
+devrel/rc_toy1/rc_toy1
+devrel/rc_toy2/rc_toy2
+devrel/rc_toy3/rc_toy3
