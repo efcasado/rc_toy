@@ -37,9 +37,9 @@ rel: compile
 	cd $(REL_DIR); $(REBAR) generate
 
 devrel: compile
-	@cd devrel/rc_toy1; $(REBAR) generate
-	@cd devrel/rc_toy2; $(REBAR) generate
-	@cd devrel/rc_toy3; $(REBAR) generate
+	@rm -rf devrel/rc_toy1/rc_toy1; cd devrel/rc_toy1; $(REBAR) generate
+	@rm -rf devrel/rc_toy2/rc_toy2; cd devrel/rc_toy2; $(REBAR) generate
+	@rm -rf devrel/rc_toy3/rc_toy3; cd devrel/rc_toy3; $(REBAR) generate
 
 dev-start:
 	@devrel/rc_toy1/rc_toy1/bin/rc_toy1 start
