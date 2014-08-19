@@ -12,7 +12,9 @@
 %% API
 -export(
    [
-    ping/0
+    ping/0,
+    put/2,
+    get/1
    ]).
 
 
@@ -37,6 +39,14 @@ ping() ->
     %%   b) sync_command: synchronous (blocks the vnode)
     %%   c) sync_spawn_command: synchronous (does not block the vnode)
     riak_core_vnode_master:sync_spawn_command(IdxNode, ping, ?MASTER).
+
+put(Key, Value) ->
+    IdxNode = find_node({data, Key}),
+    riak_core_vnode_master:sync_spawn_command(IdxNode, {put, Key, Value}, ?MASTER).
+
+get(Key) ->
+    IdxNode = find_node({data, Key}),
+    riak_core_vnode_master:sync_spawn_command(IdxNode, {get, Key}, ?MASTER).
 
 
 %% =================
